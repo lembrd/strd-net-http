@@ -4,7 +4,7 @@ name := "strd-net-http"
 
 organization := "org.strd"
 
-version := "1.0-SNAPSHOT"
+version := "0.9"
 
 scalaVersion := "2.11.8"
 val nettyVersion = "4.1.0.Final"
