@@ -4,6 +4,14 @@ STRD Http Library
 Tiny Http library based on io.netty for high performance HTTP servers 
 
 ## How to use
+build.sbt
+```scala
+
+resolvers += Resolver.bintrayRepo("lembrd", "maven")
+libraryDependencies += "org.strd" %% "strd-net-http" % "0.9"
+```
+
+Code sample:
 ```scala
 
   implicit val execctx = ExecutionContext.fromExecutor( Executors.newCachedThreadPool() )
