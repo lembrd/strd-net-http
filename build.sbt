@@ -36,7 +36,7 @@ val publishSettings = Seq(
   publishMavenStyle := true,
   publishArtifact in Test := false,
   bintrayPackageLabels := Seq("strd-net-http"),
-  licenses += ("GNU-3.0", url("https://github.com/lembrd/strd-net-http/blob/master/LICENSE"))
+  licenses += ("GPL-3.0", url("https://github.com/lembrd/strd-net-http/blob/master/LICENSE"))
 )
 
 libraryDependencies ++= Seq(
