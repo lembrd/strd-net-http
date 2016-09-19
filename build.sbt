@@ -32,10 +32,14 @@ pomExtra := <scm>
       <name>Kirill chEbba Chebunin</name>
       <url>https://github.com/chebba</url>
     </developer>
-  </developers>
+  </developers>;
+
 publishMavenStyle := true
+
 publishArtifact in Test := false
+
 bintrayPackageLabels := Seq("strd-net-http")
+
 licenses += ("LGPL-3.0", url("https://opensource.org/licenses/lgpl-3.0.html"))
 
 libraryDependencies ++= Seq(
