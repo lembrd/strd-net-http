@@ -1,4 +1,7 @@
 # strd-net-http
+[![Build Status](https://travis-ci.org/lembrd/strd-net-http.svg)](https://travis-ci.org/lembrd/strd-net-http)
+[ ![Download](https://api.bintray.com/packages/lembrd/maven/strd-net-http/images/download.svg) ](https://bintray.com/lembrd/maven/strd-net-http/_latestVersion)
+
 STRD Http Library
 
 Tiny Http library based on io.netty for high performance HTTP servers 
