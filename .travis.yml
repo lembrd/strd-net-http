@@ -1,0 +1,22 @@
+language: scala
+scala:
+- 2.11.8
+jdk:
+- oraclejdk8
+env:
+  global:
+  - BINTRAY_USER=lembrd
+  - secure: B+EJirSOEJ34ymLh75odKa9+rMI9S4jm81IesYaBwN3wPgopH0xx7VjpCzVrhzF5T+fZsYommhmLUVoWWGOl88YuiRxUqGKsGDH2a5+AYRxh/4BKDzhJgk8MqD44/1TjLTBkkX3u/G/ohnADZNP/nfXMFIyUI6Y6DUx6a8SCfWTtWD4wAOB4bJMvvipu88P90uBSUjWsitbenVh0jEYNceL8KnNp72fRdL74wPDGp8FKSck7YndWeXCetc731rvZ4fgtEPurwn5YsSf4QW7bD0lNMO4lZr8F3WK+bhhiJ1KcZrjf0cj23NhTZoIpnlXCLSAQxaTj6AFsMp5DtzhUi5A5orvpcFOSGlSUy4lNSn+9hO3HUbylJ2D+YKpy6MDdrQHhYJUrAzHNQjHnV+Ux/ysaJ1hO6kxBePrSQ+joB9nkdunOnOgqxzjLFgvPoeq0/+F8scGHKNZAwpkMxSBNrcUpbwiYBzCGl8RnYNH1lRMcCb+H+ObLkxNUvXDB2FkbgjOGdKjkbzheGB4G9VWlinfokuFJVxTWf3ZZWEgeKJaF+LzABiz1FEB4XvDvzGuf6yS7k7XRXhRCq38knkLMF3/VaDrJsBXRM01FtR38L09P692MXNfvxJO0aJQ+8AlCfVy1m9T4SkSIkyWRUBg5gyr5YhYz1TsRxBfukLuDanA=
+script:
+- sbt package
+after_success:
+- sh "$TRAVIS_BUILD_DIR/travis/travis-bintray-credentials.sh"
+- if [[ $TRAVIS_BRANCH =~ ^release ]]; then sbt publish; else echo "skip publish for branch $TRAVIS_BRANCH"; fi
+before_cache:
+- find $HOME/.ivy2 -name "ivydata-*.properties" -delete
+- find $HOME/.sbt -name "*.lock" -delete
+cache:
+  directories:
+  - "$HOME/.ivy2"
+  - "$HOME/.m2"
+  - "$HOME/.sbt"
