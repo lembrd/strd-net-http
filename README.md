@@ -11,7 +11,7 @@ build.sbt
 ```scala
 
 resolvers += Resolver.bintrayRepo("lembrd", "maven")
-libraryDependencies += "org.strd" %% "strd-net-http" % "0.9"
+libraryDependencies += "org.strd" %% "strd-net-http" % "0.9.1"
 ```
 
 Code sample:
